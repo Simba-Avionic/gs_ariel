@@ -11,6 +11,7 @@ find_package(rclcpp REQUIRED)
 # find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(gs_interfaces)
 
 include_directories(include/ariel)
 
@@ -21,7 +22,7 @@ set(SOURCES
 )
 
 add_executable(ariel ${SOURCES})
-ament_target_dependencies(ariel rclcpp std_msgs sensor_msgs)
+ament_target_dependencies(ariel rclcpp std_msgs sensor_msgs gs_interfaces)
 
 install(TARGETS ariel
   DESTINATION lib/${PROJECT_NAME})
